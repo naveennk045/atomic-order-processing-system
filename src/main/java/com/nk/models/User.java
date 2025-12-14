@@ -6,20 +6,20 @@ import com.nk.models.enums.UserStatus;
 public class User {
 
     private static long userCount = 0;
-    private long usedId;
+    private final long id;
     private String password;
     private UserRole role;
     private UserStatus status;
 
     public User(String password, UserRole role, UserStatus status) {
-        this.usedId = ++userCount;
+        this.id = ++userCount;
         this.password = password;
         this.role = role;
         this.status = status;
     }
 
-    public long getUsedId() {
-        return usedId;
+    public long getId() {
+        return id;
     }
 
     public String getPassword() {
